@@ -37,15 +37,15 @@ RUN apt-get update && apt-get install -y \
     && pip3 install --no-cache-dir jupyterlab notebook \
     && Rscript -e "install.packages('IRkernel', repos='https://cloud.r-project.org'); IRkernel::installspec(user = FALSE)"
 
-# # BiocManager
-# RUN R -e "if (!requireNamespace('BiocManager', quietly = TRUE))" \
-#     R -e "install.packages('BiocManager')" 
+# BiocManager
+RUN R -e "if (!requireNamespace('BiocManager', quietly = TRUE))" \
+    R -e "install.packages('BiocManager')" 
 
-# # Install various packages
-# RUN R -e "BiocManager::install('tidyverse')" 
-# RUN R -e "install.packages(c('openai', 'enrichR', 'pachwork', 'rtracklayer', 'tinytex'))" 
-# RUN R -e "remotes::install_github('Winnie09/GPTCelltype')" 
-# RUN R -e "remotes::install_github('immunogenomics/presto')"
+# Install various packages
+RUN R -e "BiocManager::install('tidyverse')" 
+RUN R -e "install.packages(c('openai', 'enrichR', 'pachwork', 'rtracklayer', 'tinytex'))" 
+RUN R -e "remotes::install_github('Winnie09/GPTCelltype')" 
+RUN R -e "remotes::install_github('immunogenomics/presto')"
 
 
 
