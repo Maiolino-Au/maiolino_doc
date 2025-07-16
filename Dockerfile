@@ -44,7 +44,7 @@ RUN R -e "if (!requireNamespace('BiocManager', quietly = TRUE))" \
 # Install various packages
 RUN R -e "BiocManager::install('tidyverse')" 
 RUN R -e "install.packages(c('openai', 'enrichR', 'pachwork', 'rtracklayer', 'tinytex'))" 
-RUN R -e "remotes::install_github('Winnie09/GPTCelltype')" 
+# RUN R -e "remotes::install_github('Winnie09/GPTCelltype')" 
 RUN R -e "remotes::install_github('immunogenomics/presto')"
 
 
